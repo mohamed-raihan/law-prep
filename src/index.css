@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* Import Geist font using @font-face */
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/geist-sans/Geist-Variable.woff2') format('woff2');
+  /* font-weight: 100 900; */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Base font family */
+* {
+  font-family: 'Geist', sans-serif;
+}
+
+/* H1 Typography */
+h1 {
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 62px;
+  letter-spacing: 0px;
+}
+
+/* H2 Typography */
+h2 {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 44px;
+  letter-spacing: 0px;
+}
+
+/* Body Headings */
+.body-heading {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+/* Body Text */
+body,
+p,
+.body-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+/* Navbar Items */
+.navbar-item,
+nav a,
+nav button {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+}
+
