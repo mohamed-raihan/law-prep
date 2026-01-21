@@ -5,6 +5,8 @@ import Experts from '../components/home/Experts'
 import Examination from '../components/home/Examination'
 import Preperation from '../components/home/Preperation'
 import Lead from '../components/home/Lead'
+import LawJoureny from '../components/home/LawJoureny'
+import Faq from '../components/home/Faq'
 export default function Home() {
     return (
         <div className="min-h-screen bg-[#F4F2F0]">
@@ -13,8 +15,10 @@ export default function Home() {
                 <Hero />
                 <Experts />
                 <Examination />
+                <Lead /> 
                 <Preperation />
-                <Lead />
+                <LawJoureny />
+                <Faq />
                 <Footer />
             </div>
         </div>

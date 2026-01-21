@@ -17,8 +17,14 @@
 /* H1 Typography */
 h1 {
   font-size: 56px;
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
   font-weight: 500;
   line-height: 62px;
+  @media (max-width: 768px) {
+    line-height: 42px;
+  }
   letter-spacing: 0px;
 }
 
@@ -42,7 +48,7 @@ h2 {
 body,
 p,
 .body-text {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0px;

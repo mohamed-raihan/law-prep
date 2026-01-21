@@ -1,101 +1,130 @@
-import Card from '../common/Card'
-
-function BookIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6" aria-hidden="true">
-      <path
-        d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M8 7h8M8 11h8M8 15h4"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-      />
-    </svg>
-  )
-}
+import LeadCard from './LeadCard'
 
 const cards = [
   {
     id: 1,
-    title: 'Topic-Focused Learning & Practice',
+    title: 'Top-Tier NLU Legal Mentors',
     paragraph:
-      'Topic-wise practice questions, curated study material, and legal reasoning workbooks are designed around the latest exam pattern to help students build strong fundamentals, identify weak areas, and progress step by step with accuracy.'
+      'Our faculty consists of alumni from top NLUs like NLSIU, NALSAR, and WBNUJS who have cracked these exams themselves, providing professional insights into evolving exam patterns and legal reasoning.',
+    image: '/1.png',
+    expandedContent: [
+      'The NLU Edge: Our faculty consists of alumni from top NLUs like NLSIU, NALSAR, and WBNUJS who have cracked these exams themselves',
+      'Expert Pedagogy: Beyond just lectures, our legal experts provide professional insights into evolving exam patterns and legal reasoning',
+      'Strategic Roadmaps: Get personalized strategies for time management and section-wise attempts directly from those who have mastered the journey',
+      'Interactive Digital Sessions: High-definition live classes where you can interact directly with mentors in real-time'
+    ]
   },
   {
     id: 2,
-    title: 'All India full-Length Mock Tests',
+    title: '100+ All India Mock Tests',
     paragraph:
-      'All-India, full-length mock tests replicate real exam patterns, difficulty, and time pressure—helping students experience actual exam conditions and benchmark their performance against national-level competition.'
+      'Mocks designed to mirror the exact difficulty, interface, and time pressure of CLAT, AILET, and other major exams, allowing you to compete with thousands of aspirants across India to understand your real-time standing and percentile.',
+    image: '/2.png',
+    expandedContent: [
+      'Real Exam Simulation: Mocks designed to mirror the exact difficulty, interface, and time pressure of CLAT, AILET, and other major exams',
+      'National Benchmarking: Compete with thousands of aspirants across India to understand your real-time standing and percentile',
+      'Video Solutions: Every mock is followed by detailed video explanations by experts to clarify complex logic',
+      'Dynamic Updating: Our mock bank is updated monthly to reflect the latest changes in entrance trends'
+    ]
   },
   {
     id: 3,
-    title: 'Mentor Guidance & Doubt Support',
+    title: 'Topic-Wise Practice & Sectional Tests',
     paragraph:
-      'Dedicated mentorship and regular doubt-clearing sessions provide continuous academic support, ensuring students clearly understand legal concepts, stay on track, and prepare with confidence.'
+      'Practice thousands of questions mapped to specific topics—from Legal Maxims to Quantitative Techniques. Use sectional tests to bridge the gap between concept learning and full-length mock stamina.',
+    image: '/3.png',
+    expandedContent: [
+      'Granular Focus: Practice thousands of questions mapped to specific topics—from Legal Maxims to Quantitative Techniques',
+      'Skill-Building: Use sectional tests to bridge the gap between concept learning and full-length mock stamina',
+      'Adaptive Difficulty: Practice sets that evolve in difficulty as you improve, ensuring consistent growth',
+      'Immediate Feedback: Instant results and correct explanations provided the moment you submit a practice set'
+    ]
   },
   {
     id: 4,
     title: 'Performance Review & Analysis',
     paragraph:
-      'Each mock test is followed by detailed, AI-backed analysis that tracks accuracy, speed, and time management, helping students identify gaps, discover scoring opportunities, and improve overall exam readiness.'
+      'Detailed analytics tracking your accuracy, speed, and time-spent per question. Visual charts highlight your strongest and weakest areas across the syllabus with automated recommendations on which topics to revisit.',
+    image: '/4.png',
+    expandedContent: [
+      'AI-Backed Insights: Detailed analytics tracking your accuracy, speed, and time-spent per question',
+      'Gap Identification: Visual charts highlighting your strongest and weakest areas across the syllabus',
+      'Improvement Roadmap: Automated recommendations on which topics to revisit based on your mock performance',
+      'Progress Tracking: Historical data logs to monitor your growth from the first day of prep to the final exam'
+    ]
   },
   {
     id: 5,
-    title: 'Expert-Curated Learning Resources',
+    title: 'Topic-Focused Learning & Practice',
     paragraph:
-      'Access expertly curated study materials, structured notes, and exhaustive legal reasoning workbooks—aligned with the latest exam patterns—to simplify complex concepts and support effective, consistent revision.'
+      'Digital study materials and legal reasoning workbooks designed around the latest NLU entrance patterns. Step-by-step learning modules break down complex topics into digestible, easy-to-understand segments.',
+    image: '/5.png',
+    expandedContent: [
+      'Curated Workbooks: Digital study materials and legal reasoning workbooks designed around the latest NLU entrance patterns',
+      'Concept Clarity: Step-by-step learning modules that break down "scary" topics into digestible, easy-to-understand segments',
+      'One-Stop Resource: All your notes, explanations, and revision materials organized in a single, easy-to-access online dashboard',
+      'Focused Practice: Targeted question banks for every lesson to ensure mastery before moving to the next level'
+    ]
   },
   {
     id: 6,
-    title: 'Topic-Wise Practice & Sectional Tests',
+    title: 'Mentor Guidance & Doubt Support',
     paragraph:
-      'Topic-wise practice and focused sectional tests help students strengthen fundamentals, improve accuracy, identify weak areas, and progress step by step toward advanced exam readiness.'
+      'Post your queries anytime on our portal and get resolutions from expert faculty within hours. Regular weekly sessions dedicated entirely to solving student queries and discussing tricky concepts.',
+    image: '/6.png',
+    expandedContent: [
+      '24/7 Digital Doubt Room: Post your queries anytime on our portal and get resolutions from expert faculty within hours',
+      'Live Doubt-Clearing Sessions: Regular weekly sessions dedicated entirely to solving student queries and discussing tricky concepts',
+      'One-on-One Mentorship: Book virtual slots with NLU graduates for personalized counseling and motivation',
+      'Peer Learning Community: Access to an exclusive online group of serious aspirants for collaborative learning and support'
+    ]
   }
 ]
 
 export default function Lead() {
   return (
     <section className="my-4 bg-white rounded-[20px] md:rounded-[28px] p-6 md:p-8 lg:p-10">
+      {/* Top Section with Title and Illustration */}
+      <div className="mb-8 md:mb-10 lg:mb-12 text-center">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-black mb-4 md:mb-6">
+          Where Preparation meets Purpose
+        </h2>
+        <p className="text-base md:text-lg lg:text-xl text-black max-w-4xl mx-auto mb-6 md:mb-8 leading-relaxed">
+          Guided by mentors from top law schools, our strategically designed programs combine concept clarity, exam-focused practice, and performance analysis to help serious law aspirants prepare smarter and reach top law colleges.
+        </p>
+        <div className="flex justify-center items-center">
+          <img 
+            src="/coursePrep.svg" 
+            alt="Graduation celebration illustration" 
+            className="w-full max-w-md md:max-w-lg lg:max-w-xl h-auto"
+          />
+        </div>
+      </div>
+
       {/* Header */}
       <div className="mb-6 md:mb-8 lg:mb-10">
         <span className="inline-block px-3 py-1.5 md:px-4 bg-[#F4F2F0] rounded-full text-xs md:text-sm text-[#666666] font-medium mb-3 md:mb-4">
-          Our Specializations
+          Our Course Details
         </span>
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-medium text-black">
-          Everything You Need to Lead
+          Everything You Need to Know <br /> About Our Course
         </h2>
       </div>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
-        {cards.map((card, index) => (
-          <Card
-            key={card.id}
-            icon={<BookIcon />}
-            title={card.title}
-            paragraph={card.paragraph}
-            backgroundColor="bg-[#F4F2F0]"
-            paddingTop={index < 3 ? 'pt-8 md:pt-12 lg:pt-40' : 'pt-6'}
-            paddingBottom="pb-6"
-            width="w-full"
-            iconBgColor="bg-[#F3572A]"
-            className=""
-          />
-        ))}
-      </div>
+      {/* Cards Grid */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+  {cards.map((card) => (
+    <LeadCard
+      key={card.id}
+      title={card.title}
+      paragraph={card.paragraph}
+      image={card.image}
+      expandedContent={card.expandedContent}
+      className="h-[450px]"
+    />
+  ))}
+</div>
     </section>
   )
 }

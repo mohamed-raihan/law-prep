@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 const examinations = [
   {
     id: 1,
@@ -74,6 +75,7 @@ const examinations = [
 ]
 
 export default function Examination() {
+  const navigate = useNavigate()
   return (
     <div className="relative bg-white rounded-[25px] p-10">
       {/* Header Section */}
@@ -87,7 +89,7 @@ export default function Examination() {
       </div>
 
       {/* Examinations Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
         {examinations.map((exam) => (
           <div
             key={exam.id}
@@ -103,12 +105,12 @@ export default function Examination() {
       </div>
 
       {/* Chat Widget */}
-      <div className="flex justify-center mt-8 ">
-        <div className="bg-[#F4F2F0] rounded-[48px] p-4 flex items-center gap-3 max-w-md border border-gray-100 min-w-5xl">
+      <div className="flex justify-center mt-6 md:mt-8">
+        <div className="bg-[#F4F2F0] rounded-2xl md:rounded-[48px] p-3 md:p-4 flex flex-col sm:flex-row items-center gap-2 sm:gap-3 w-full md:max-w-[80%] border border-gray-100">
           <div className="flex-shrink-0">
-            <div className="w-12 h-12 rounded-full bg-teal-600 flex items-center justify-center overflow-hidden border-2 border-[#F4F2F0] relative">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-teal-600 flex items-center justify-center overflow-hidden border-2 border-[#F4F2F0] relative">
               <svg
-                className="w-7 h-7 text-white"
+                className="w-5 h-5 sm:w-7 sm:h-7 text-white"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -120,15 +122,18 @@ export default function Examination() {
               </svg>
             </div>
           </div>
-          <div className="flex-1 min-w-0">
-            <h3 className="text-[20px] text-black mb-0.5">
+          <div className="flex-1 min-w-0 text-center sm:text-left">
+            <h3 className="text-base sm:text-lg md:text-[20px] text-black mb-0.5">
               <span className="font-bold">Hey,</span> 👋 I'm from the Prep Academy team.
             </h3>
             <p className="text-xs text-[#666666]">
               Happy to help you get started with your prep.
             </p>
           </div>
-          <button className="bg-[#F3572A] text-white px-6 py-4 rounded-[48px] text-xs font-medium uppercase hover:bg-orange-600 transition-colors whitespace-nowrap flex-shrink-0">
+          <button 
+            onClick={() => navigate('/contact')} 
+            className="bg-[#F3572A] text-white px-4 py-2 sm:px-6 sm:py-3 md:py-4 rounded-2xl sm:rounded-[48px] text-xs font-medium uppercase hover:bg-orange-600 transition-colors whitespace-nowrap flex-shrink-0 w-full sm:w-auto"
+          >
             CONTACT US
           </button>
         </div>

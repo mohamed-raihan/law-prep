@@ -48,26 +48,26 @@ export default function Experts() {
 
   return (
     <div className="mb-4">
-      <div className="bg-white rounded-[25px] p-10 mx-auto">
+      <div className="bg-white rounded-[25px] p-4 sm:p-6 md:p-8 lg:p-10 mx-auto">
         {/* Top Section */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6 sm:mb-8 md:mb-12 gap-4 sm:gap-6">
           <div className="flex-1">
-            <span className="inline-block px-4 py-1.5 bg-[#F4F2F0] rounded-full text-sm text-[#666666] font-medium mb-4">
+            <span className="inline-block px-3 sm:px-4 py-1.5 bg-[#F4F2F0] rounded-full text-xs sm:text-sm text-[#666666] font-medium mb-3 sm:mb-4">
               Mentors
             </span>
-            <h2 className="text-4xl md:text-5xl font-medium mb-6">
-              Meet <br /> Our Experts
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-4 sm:mb-6">
+              Meet <br className="hidden sm:block" /> Our Experts
             </h2>
           </div>
           <div className="flex-1 max-w-2xl">
-            <p className="text-[20px] text-[#666666] font-regular">
+            <p className="text-base sm:text-lg md:text-[20px] text-[#666666] font-regular">
               Guided by the best in the field: Our mentors are NLU graduates and senior law professionals who bring firsthand experience and tested strategies to your prep and the deep understanding needed to excel in CLAT, AILET, LSAT, and beyond.
             </p>
           </div>
         </div>
 
         {/* Mentor Grid */}
-        <div className="flex flex-wrap justify-center gap-8 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-12">
           {mentors.map((mentor) => (
             <div
               key={mentor.id}
@@ -77,7 +77,7 @@ export default function Experts() {
               }`}
             >
               <div
-                className={`w-32 h-32 rounded-full overflow-hidden mb-4 border-4 transition-all duration-300 ${
+                className={`w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-2 sm:mb-3 md:mb-4 border-2 sm:border-3 md:border-4 transition-all duration-300 ${
                   selectedMentor.id === mentor.id
                     ? 'border-gray-800 shadow-lg'
                     : 'border-transparent hover:border-gray-400'
@@ -89,10 +89,10 @@ export default function Experts() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-medium text-center mb-1">
+              <h3 className="text-sm sm:text-base md:text-lg font-medium text-center mb-1 max-w-[120px] sm:max-w-[150px] md:max-w-none">
                 {mentor.name}
               </h3>
-              <p className="text-sm text-gray-600 text-center">
+              <p className="text-xs sm:text-sm text-gray-600 text-center max-w-[120px] sm:max-w-[150px] md:max-w-none">
                 {mentor.title}
               </p>
             </div>
@@ -100,11 +100,11 @@ export default function Experts() {
         </div>
 
         {/* Detailed Mentor Card */}
-        <div className="bg-white rounded-[25px] p-8 md:p-12 border-3 border-gray-100">
-          <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+        <div className="bg-white rounded-[25px] p-4 sm:p-6 md:p-8 lg:p-12 border-3 border-gray-100">
+          <div className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8 lg:gap-12">
             {/* Mentor Image */}
-            <div className="flex-shrink-0">
-              <div className="w-64 h-80 md:w-80 md:h-96 rounded-2xl overflow-hidden">
+            <div className="flex-shrink-0 mx-auto md:mx-0">
+              <div className="w-48 h-60 sm:w-56 sm:h-72 md:w-64 md:h-80 lg:w-80 lg:h-96 rounded-2xl overflow-hidden">
                 <img
                   src={selectedMentor.image}
                   alt={selectedMentor.name}
@@ -114,16 +114,16 @@ export default function Experts() {
             </div>
 
             {/* Mentor Details */}
-            <div className="flex-1 flex flex-col justify-between">
+            <div className="flex-1 flex flex-col">
               <div>
-              <h3 className="text-3xl md:text-4xl font-medium mb-4">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-3 sm:mb-4">
                 {selectedMentor.name}
               </h3>
-              <p className="text-xl text-gray-600 mb-6">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-4 sm:mb-6">
                 {selectedMentor.detailedTitle}
               </p>
               </div>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
+              <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
                 <p>{selectedMentor.bio}</p>
                 {/* <p>{selectedMentor.bio}</p> */}
               </div>

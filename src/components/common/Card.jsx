@@ -3,6 +3,7 @@
  * @param {ReactNode|string} icon - Icon component, SVG, or image path
  * @param {string} title - Card title/heading
  * @param {string} paragraph - Card description text
+ * @param {string} image - Image path to display in the card
  * @param {string} backgroundColor - Tailwind background color class (default: 'bg-white')
  * @param {string} paddingTop - Tailwind padding top class (default: 'pt-6')
  * @param {string} paddingBottom - Tailwind padding bottom class (default: 'pb-6')
@@ -14,6 +15,7 @@ export default function Card({
   icon,
   title,
   paragraph,
+  image,
   backgroundColor = 'bg-white',
   paddingTop = 'pt-6',
   paddingBottom = 'pb-6',
@@ -23,6 +25,17 @@ export default function Card({
 }) {
   return (
     <div className={`${width} ${backgroundColor} rounded-[12px] md:rounded-[16px] ${paddingTop} ${paddingBottom} px-4 md:px-5 lg:px-6 ${className} h-full`}>
+      
+      {image && (
+        <div className="mb-4 md:mb-5 w-full">
+          <img 
+            src={image} 
+            alt={title || 'Card image'} 
+            className="w-full h-40 md:h-48 lg:h-56 object-cover rounded-[12px] md:rounded-[16px]" 
+          />
+        </div>
+      )}
+      
       {/* Icon */}
       {icon && (
         <div className="mb-3 md:mb-4">
