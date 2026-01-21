@@ -15,7 +15,7 @@ const mentors = [
     title: 'Senior Law Mentor',
     detailedTitle: 'Senior Law Mentor (CLAT & LSAT)',
     image: '/ayushiSingh.png',
-    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    bio: 'Aayushi Singh Tomar is a legal academic and researcher currently pursuing her Ph.D. at National Law University, Tripura (Agartala). With a strong academic orientation, she brings a research-driven and concept-focused approach to legal education. As a mentor, Aayushi is committed to helping students build conceptual clarity, analytical thinking, and a strong foundational understanding of law. Her mentoring style emphasizes structured learning and strategic preparation, enabling learners to approach competitive exams and legal studies with confidence and academic rigour.She believes in guiding students not just to learn, but to think critically, reason effectively, and apply legal concepts with precision skills that are essential for long-term success in the legal field.'
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const mentors = [
     name: 'Priyanka Nair',
     title: 'Senior Law Mentor',
     detailedTitle: 'Senior Law Mentor (CLAT & AILET)',
-    image: '/priyankaNair.png',
+    image: '/priyankaNair.png', 
     bio: 'Priyanka Nair is a legal professional and academic with a strong foundation across criminal justice, business laws, and legal practice. She holds a Bachelor of Laws (LL.B.) from Kerala Law Academy Law College, Thiruvananthapuram, and a Master of Laws (LL.M.) in Business Laws from National Law University, Delhi. She further pursued her Ph.D. in Criminal Justice / Law Enforcement Administration from Hidayatullah National Law University, reflecting her deep academic engagement with justice systems, enforcement mechanisms, and criminal law frameworks. Priyanka is enrolled as an Advocate with the Bar Council of Delhi, bringing practical legal insight into her academic and mentoring work. Known for her critical thinking and analytical skills, she guides our students to approach law with clarity, structure, and strategic reasoning bridging doctrinal understanding with real-world legal application. As a mentor, she focuses on building strong conceptual foundations while helping students develop the critical skills required for legal studies, research, and professional practice.'
   },
   {
@@ -39,7 +39,7 @@ const mentors = [
     title: 'Senior Law Mentor',
     detailedTitle: 'Senior Law Mentor (CLAT, AILET & LSAT)',
     image: '/mohammedShahzad.png',
-    bio: 'Mohammed Shahzad Shafi is a legal academic with a strong academic grounding in corporate, commercial, and doctrinal legal studies. He holds a Bachelor of Laws (LL.B.) from Government Law College, Kozhikode and a Master of Laws (LL.M.) in Corporate and Commercial Law from Christ University, Bangalore. He is currently pursuing his Ph.D. in Law at National Law University, Odisha, where his research reflects a deep engagement with contemporary legal frameworks and evolving regulatory landscapes. As a mentor, Mohammed Shahzad Shafi brings a structured, concept-driven approach to legal education. He focuses on helping students build strong fundamentals, analytical clarity, and academic depth, with a particular emphasis on legal research as a core professional skill.'
+    bio: 'Mohammed Shahzad Shafi is a legal academic with a strong academic grounding in corporate, commercial, and doctrinal legal studies. His academic journey reflects a commitment to excellence in legal scholarship and student mentorship. He is currently pursuing his Ph.D. in Law at National Law University, Odisha, where his research reflects a deep engagement with contemporary legal frameworks and evolving regulatory landscapes. Known for his academic excellence and analytical depth, his doctoral research is rooted in rigorous scholarship, critical inquiry, and a commitment to advancing legal understanding. As a mentor, Mohammed Shahzad Shafi brings a structured, concept-driven approach to legal education. He focuses on helping students build strong fundamentals, analytical clarity, and academic depth, with a particular emphasis on legal research as a core professional skill.'
   }
 ]
 
