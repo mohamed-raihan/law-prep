@@ -62,6 +62,8 @@
 //     )
 //   }
 
+import { useState } from 'react';
+
 export default function LeadCard({
     className,
     title,
@@ -69,6 +71,12 @@ export default function LeadCard({
     image,
     expandedContent = []
   }) {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const handleToggle = () => {
+      setIsExpanded(!isExpanded);
+    };
+
     return (
       /* 1. Ghost container keeps the grid layout stable */
       <div className={`relative w-full ${className}`}>
@@ -76,22 +84,28 @@ export default function LeadCard({
         {/* 2. The Card with Blur Logic: 
                - We blur this card if the PARENT grid is hovered (group-hover/main:blur-sm)
                - BUT we remove the blur if THIS card is hovered (hover:!blur-none) */}
-        <div className="
-          absolute inset-0 z-10
-          group w-full bg-[#F4F2F0] rounded-[20px] p-6
-          transition-all duration-500 ease-out
-          group-hover/main:blur-sm hover:!blur-none 
-          hover:scale-105 hover:z-50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.2)] hover:h-fit
-          flex flex-col overflow-hidden
-        ">
+        <div 
+          onClick={handleToggle}
+          className={`
+            absolute inset-0 z-10
+            group w-full bg-[#F4F2F0] rounded-[20px] p-6
+            transition-all duration-500 ease-out
+            group-hover/main:blur-sm hover:!blur-none 
+            hover:scale-105 hover:z-50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.2)] hover:h-fit
+            flex flex-col overflow-hidden
+            cursor-pointer
+            ${isExpanded ? 'scale-105 z-50 shadow-[0_20px_50px_rgba(0,0,0,0.2)] h-fit' : ''}
+          `}
+        >
           
           {/* Image - Slides up and fades out */}
           {image && (
-            <div className="
+            <div className={`
               overflow-hidden transition-all duration-500 ease-in-out
               max-h-56 opacity-100 mb-4
               group-hover:max-h-0 group-hover:opacity-0 group-hover:mb-0
-            ">
+              ${isExpanded ? 'max-h-0 opacity-0 mb-0' : ''}
+            `}>
               <img 
                 src={image} 
                 alt={title} 
@@ -111,11 +125,12 @@ export default function LeadCard({
             </p>
   
             {/* Expanded Content - Revealed when image is hidden */}
-            <div className="
+            <div className={`
               overflow-hidden transition-all duration-700 ease-in-out
               max-h-0 opacity-0
               group-hover:max-h-[1000px] group-hover:opacity-100 group-hover:mt-6
-            ">
+              ${isExpanded ? 'max-h-[1000px] opacity-100 mt-6' : ''}
+            `}>
               <div className="h-[1px] bg-gray-300 w-full mb-4" />
               <h4 className="text-md font-bold text-[#F3572A] mb-3 uppercase tracking-wider">
                 Key Features

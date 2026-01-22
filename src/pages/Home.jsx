@@ -10,7 +10,7 @@ import Faq from '../components/home/Faq'
 export default function Home() {
     return (
         <div className="min-h-screen bg-[#F4F2F0]">
-            <div className="px-10">
+            <div className="md:px-10 px-2">
                 <Header />
                 <Hero />
                 <Experts />
