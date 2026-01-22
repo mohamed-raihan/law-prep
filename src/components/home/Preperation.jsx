@@ -28,9 +28,9 @@ function CapIcon() {
 const cards = [
   {
     id: 1,
-    title: 'Adaptive Learning Batches',
+    title: 'Adaptive Virtual Classroom',
     paragraph:
-      'Choose between intensive offline classes or flexible online batches, both led by expert faculty and supported by 24/7 recorded sessions to strengthen concepts and reinforce classroom learning.'
+      'Attend live online classes and access recorded sessions on a flexible digital platform, learn from NLU mentors anywhere, revisit concepts anytime, and stay supported through interactive sessions and online doubt resolution.'
   },
   {
     id: 2,

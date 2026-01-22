@@ -3,72 +3,43 @@ const examinations = [
   {
     id: 1,
     name: 'CLAT',
-    fullName: 'CLAT (Common La...)',
+    // fullName: 'CLAT (Common La...)',
     logoBg: 'bg-blue-50',
     logoText: 'CLAT'
   },
   {
     id: 2,
     name: 'AILET',
-    fullName: 'AILET (All India Law...)',
+    // fullName: 'AILET (All India Law...)',
     logoBg: 'bg-indigo-50',
     logoText: 'AILET'
   },
   {
     id: 3,
-    name: 'LSAT—India',
-    fullName: 'LSAT—India',
-    logoBg: 'bg-blue-100',
-    logoText: 'LSAT'
-  },
-  {
-    id: 4,
     name: 'AILET PG',
-    fullName: 'AILET PG',
+    // fullName: 'AILET PG',
     logoBg: 'bg-indigo-100',
     logoText: 'AILET PG'
   },
   {
-    id: 5,
-    name: 'Judicial Services Ex...',
-    fullName: 'Judicial Services Ex...',
-    logoBg: 'bg-gray-100',
-    logoText: 'PCS-J'
-  },
-  {
-    id: 6,
-    name: 'APO',
-    fullName: 'APO (Assistant Pros...)',
-    logoBg: 'bg-red-50',
-    logoText: 'APO'
-  },
-  {
-    id: 7,
-    name: 'AIBE',
-    fullName: 'AIBE (All India Bar E...)',
-    logoBg: 'bg-blue-900',
-    logoText: 'AIBE',
-    textColor: 'text-white'
-  },
-  {
-    id: 8,
-    name: 'DU LLB Entrance',
-    fullName: 'DU LLB Entrance (vi...)',
+    id: 4,
+    name: 'CU LLB Entrance',
+    // fullName: 'Christ University LLB Entrance Exam, Bangalore',
     logoBg: 'bg-gray-50',
-    logoText: 'DU'
+    logoText: 'CU'
   },
   {
-    id: 9,
-    name: 'SET / SLAT',
-    fullName: 'SET / SLAT',
+    id: 5,
+    name: 'SLAT',
+    // fullName: 'SLAT',
     logoBg: 'bg-blue-900',
     logoText: 'SLAT',
     textColor: 'text-white'
   },
   {
-    id: 10,
+    id: 6,
     name: 'CUET-UG',
-    fullName: 'CUET-UG (for Law P...)',
+    // fullName: 'CUET-UG (for Law P...)',
     logoBg: 'bg-green-50',
     logoText: 'CUET'
   }
@@ -89,7 +60,7 @@ export default function Examination() {
       </div>
 
       {/* Examinations Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         {examinations.map((exam) => (
           <div
             key={exam.id}

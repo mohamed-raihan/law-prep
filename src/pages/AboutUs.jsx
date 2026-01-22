@@ -15,7 +15,7 @@ export default function AboutUs() {
         <Statistics />
         <Experts />
         <WhyChoose />
-        <Subscribe />
+        {/* <Subscribe /> */}
         <Footer />
       </div>
     </div>

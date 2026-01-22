@@ -25,9 +25,9 @@ function CircularArrowIcon() {
 const journeyCards = [
   {
     id: 1,
-    title: 'Flexible Payment Options',
+    title: 'Structured Study Plans',
     paragraph:
-      'Choose from convenient payment plans and EMI options that make learning accessible without financial stress.'
+      'A structured study plan built to ensure clear syllabus coverage and consistent progress.'
   },
   {
     id: 2,
