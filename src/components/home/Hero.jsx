@@ -1,6 +1,14 @@
 import { useNavigate } from 'react-router-dom'
 export default function Hero() {
   const navigate = useNavigate()
+
+  const handleCourseDetails = () => {
+    const element = document.getElementById('preparation-meets-purpose')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   return (
     <div className="bg-white flex items-center w-full py-16 rounded-[25px] mb-4">
       <div className="w-full px-8 lg:px-16 xl:px-24">
@@ -27,7 +35,7 @@ export default function Hero() {
 
             {/* Call-to-Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
-              <button className="px-6 py-3 bg-[#F4F2F0] text-black text-[14px] rounded-full font-medium hover:bg-gray-300 transition-colors">
+              <button onClick={handleCourseDetails} className="px-6 py-3 bg-[#F4F2F0] text-black text-[14px] rounded-full font-medium hover:bg-gray-300 transition-colors">
                 SEE COURSE DETAILS
               </button>
               <button onClick={() => navigate('/contact')} className="px-6 py-3 bg-[#F3572A] text-white rounded-full text-[14px] font-medium hover:bg-orange-600 transition-colors flex items-center justify-center gap-2 cursor-pointer">

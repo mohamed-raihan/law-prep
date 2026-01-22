@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const mentors = [
   {
@@ -45,6 +45,32 @@ const mentors = [
 
 export default function Experts() {
   const [selectedMentor, setSelectedMentor] = useState(mentors[0])
+  const [isHovering, setIsHovering] = useState(false)
+  const intervalRef = useRef(null)
+
+  // Auto-switch mentors every 3 seconds
+  useEffect(() => {
+    if (!isHovering) {
+      intervalRef.current = setInterval(() => {
+        setSelectedMentor((prev) => {
+          const currentIndex = mentors.findIndex((m) => m.id === prev.id)
+          const nextIndex = (currentIndex + 1) % mentors.length
+          return mentors[nextIndex]
+        })
+      }, 3000)
+    } else {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+        intervalRef.current = null
+      }
+    }
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+      }
+    }
+  }, [isHovering])
 
   return (
     <div className="mb-4">
@@ -72,6 +98,8 @@ export default function Experts() {
             <div
               key={mentor.id}
               onClick={() => setSelectedMentor(mentor)}
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
               className={`flex flex-col items-center cursor-pointer transition-all duration-300 ${
                 selectedMentor.id === mentor.id ? 'scale-105' : 'hover:scale-105'
               }`}
@@ -100,7 +128,11 @@ export default function Experts() {
         </div>
 
         {/* Detailed Mentor Card */}
-        <div className="bg-white rounded-[25px] p-4 sm:p-6 md:p-8 lg:p-12 border-3 border-gray-100">
+        <div 
+          className="bg-white rounded-[25px] p-4 sm:p-6 md:p-8 lg:p-12 border-3 border-gray-100"
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+        >
           <div className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8 lg:gap-12">
             {/* Mentor Image */}
             <div className="flex-shrink-0 mx-auto md:mx-0">

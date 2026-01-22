@@ -83,7 +83,7 @@ const cards = [
 
 export default function Lead() {
   return (
-    <section className="my-4 bg-white rounded-[20px] md:rounded-[28px] p-6 md:p-8 lg:p-10">
+    <section id="preparation-meets-purpose" className="my-4 bg-white rounded-[20px] md:rounded-[28px] p-6 md:p-8 lg:p-10">
       {/* Top Section with Title and Illustration */}
       <div className="mb-8 md:mb-10 lg:mb-12 text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-black mb-4 md:mb-6">
