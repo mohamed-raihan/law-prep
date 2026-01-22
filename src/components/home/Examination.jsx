@@ -3,45 +3,113 @@ const examinations = [
   {
     id: 1,
     name: 'CLAT',
-    // fullName: 'CLAT (Common La...)',
+    fullName: 'Common Law Admission Test',
     logoBg: 'bg-blue-50',
+    logo:"/clat.png",
     logoText: 'CLAT'
   },
   {
     id: 2,
     name: 'AILET',
-    // fullName: 'AILET (All India Law...)',
+    fullName: 'All India Law Entrance Test',
     logoBg: 'bg-indigo-50',
-    logoText: 'AILET'
+    logoText: 'AILET',
+    logo:"/ailet.png",
+    details: {
+      examPattern: [
+        'Conducted by NLU Delhi',
+        '120 MCQs | Duration: 120 minutes',
+        'Sections: English, GK, Legal, Logical, Quantitative',
+        '+1 for correct answers, -0.25 for incorrect answers'
+      ],
+      syllabus: [
+        'English: Comprehension, vocabulary',
+        'GK: Current affairs & static GK',
+        'Legal Reasoning: Principle-based passages',
+        'Logical Reasoning: Arguments & analysis',
+        'Quantitative Aptitude: Basic maths & data interpretation'
+      ],
+      examDate: 'Held once a year, usually in December'
+    }
   },
   {
     id: 3,
     name: 'AILET PG',
-    // fullName: 'AILET PG',
+    fullName: 'All India Law Entrance Test (PG)',
     logoBg: 'bg-indigo-100',
-    logoText: 'AILET PG'
+    logoText: 'AILET PG',
+    logo:"/ailet1.png",
+    details: {
+      examPattern: [
+        'Conducted by NLU Delhi',
+        '100 Objective MCQs | Duration: 120 minutes',
+        'Questions based on core law subjects',
+        '+1 for correct answers, -0.25 for incorrect answers'
+      ],
+      syllabus: [
+        'Constitutional Law',
+        'Criminal Law',
+        'Contract Law',
+        'Jurisprudence',
+        'Torts, Property & other core subjects'
+      ],
+      examDate: 'Conducted once a year, usually in December'
+    }
   },
   {
     id: 4,
     name: 'CU LLB Entrance',
-    // fullName: 'Christ University LLB Entrance Exam, Bangalore',
+    fullName: 'Christ University LLB Entrance Exam, Bangalore',
     logoBg: 'bg-gray-50',
-    logoText: 'CU'
+    logoText: 'CU',
+    logo:"",
+    details: {
+      examPattern: [
+        'Conducted by Christ (Deemed to be University)',
+        '120 MCQs | Duration: 120 minutes',
+        'Sections: English, General Knowledge, Logical Reasoning, Legal Aptitude, Data Analysis',
+        '+1 for correct answers, -0.25 for incorrect answers'
+      ],
+      syllabus: [
+        'English: Comprehension, grammar, vocabulary',
+        'General Knowledge: Current affairs & static GK',
+        'Legal Aptitude: Legal awareness, principles, application',
+        'Logical Reasoning: Critical & analytical reasoning',
+        'Data Analysis: Basic quantitative interpretation'
+      ],
+      examDate: 'Conducted in multiple phases'
+    }
   },
   {
     id: 5,
     name: 'SLAT',
-    // fullName: 'SLAT',
+    fullName: 'Symbiosis Law Entrance Test',
     logoBg: 'bg-blue-900',
     logoText: 'SLAT',
-    textColor: 'text-white'
+    logo:"/slat.png",
+    textColor: 'text-white',
+    details: {
+      examPattern: [
+        'Conducted by Symbiosis International University',
+        '60 MCQs | Duration: 60 minutes',
+        'Sections: Logical Reasoning, Legal Reasoning, Analytical Reasoning, Reading Comprehension',
+        'No negative marking'
+      ],
+      syllabus: [
+        'Logical & Analytical Reasoning: Patterns, arguments, decision-making',
+        'Legal Reasoning: Legal principles and application',
+        'Reading Comprehension: Passages, inference, vocabulary'
+      ],
+      examDate: 'Usually conducted in December (multiple slots)'
+    }
   },
   {
     id: 6,
     name: 'CUET-UG',
-    // fullName: 'CUET-UG (for Law P...)',
+    fullName: 'Central University Entrance Test (UG)',
     logoBg: 'bg-green-50',
-    logoText: 'CUET'
+    logoText: 'CUET',
+    logo:"/cuetug.png"
   }
 ]
 
@@ -64,13 +132,50 @@ export default function Examination() {
         {examinations.map((exam) => (
           <div
             key={exam.id}
-            className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow cursor-pointer border border-gray-100 flex flex-col items-center"
+            className="relative h-64 perspective-1000 flip-card-container"
           >
-            <div className={`w-16 h-16 ${exam.logoBg} rounded-lg flex items-center justify-center mb-4 ${exam.textColor || 'text-gray-800'}`}>
-              <span className="text-xs font-bold">{exam.logoText}</span>
+            <div className="flip-card-inner">
+              {/* Front of Card */}
+              <div className="flip-card-front bg-white rounded-xl p-6 shadow-md border border-gray-100 flex flex-col items-center justify-center">
+                <img src={exam.logo} alt={exam.name} className="w-24 h-24 object-contain mb-4" />
+                <h3 className="font-medium text-base mb-1 text-center">{exam.name}</h3>
+                <p className="text-xs text-[#666666] text-center">{exam.fullName}</p>
+              </div>
+
+              {/* Back of Card - Only show if details exist */}
+              {exam.details && (
+                <div className="flip-card-back bg-white rounded-xl p-6 shadow-md border border-gray-100 overflow-y-auto">
+                  <h3 className="font-medium text-lg mb-4 text-center">{exam.name}</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-sm mb-2 text-gray-800">Key Features</h4>
+                      <div className="space-y-3">
+                        <div>
+                          <p className="font-medium text-xs text-gray-700 mb-1">Exam Pattern</p>
+                          <ul className="list-disc list-inside space-y-1 text-xs text-gray-600">
+                            {exam.details.examPattern.map((item, idx) => (
+                              <li key={idx}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <p className="font-medium text-xs text-gray-700 mb-1">Syllabus</p>
+                          <ul className="list-disc list-inside space-y-1 text-xs text-gray-600">
+                            {exam.details.syllabus.map((item, idx) => (
+                              <li key={idx}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <p className="font-medium text-xs text-gray-700 mb-1">Exam Date</p>
+                          <p className="text-xs text-gray-600">{exam.details.examDate}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
-            <h3 className="font-medium text-base mb-1 text-center">{exam.name}</h3>
-            <p className="text-xs text-[#666666] text-center">{exam.fullName}</p>
           </div>
         ))}
       </div>

@@ -25,15 +25,15 @@ export default function LawJoureny() {
             <button
               type="button"
               onClick={() => navigate('/contact')}
-              className="px-8 py-3 bg-[#F3572A] text-white rounded-full text-[14px] font-medium hover:bg-orange-600 transition-colors"
+              className="px-8 py-3 bg-[#F3572A] text-white rounded-full text-[14px] font-medium hover:bg-orange-600 transition-colors uppercase cursor-pointer"
             >
-              APPLY NOW
+              Apply for Admission 
             </button>
 
             <button
               type="button"
               onClick={() => navigate('/contact')}
-              className="px-8 py-3 bg-[#F4F2F0] text-black rounded-full text-[14px] font-medium hover:bg-gray-200 transition-colors"
+              className="px-8 py-3 bg-[#F4F2F0] text-black rounded-full text-[14px] font-medium hover:bg-gray-200 transition-colors uppercase"
             >
               REQUEST A CALL BACK
             </button>
