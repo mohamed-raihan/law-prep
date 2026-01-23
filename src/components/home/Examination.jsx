@@ -78,7 +78,7 @@ const examinations = [
     fullName: 'Christ University LLB Entrance Exam, Bangalore',
     logoBg: 'bg-gray-50',
     logoText: 'CU',
-    logo:"",
+    logo:"/cullb.jpeg",
     details: {
       examPattern: [
         'Conducted by Christ (Deemed to be University)',
@@ -159,53 +159,70 @@ export default function Examination() {
       </div>
 
       {/* Examinations Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 card-grid-container">
         {examinations.map((exam) => (
-          <div
-            key={exam.id}
-            className="relative h-64 perspective-1000 flip-card-container"
-          >
-            <div className="flip-card-inner">
-              {/* Front of Card */}
-              <div className="flip-card-front bg-white rounded-xl p-6 shadow-md border border-gray-100 flex flex-col items-center justify-center">
-                <img src={exam.logo} alt={exam.name} className="w-24 h-24 object-contain mb-4" />
-                <h3 className="font-medium text-base mb-1 text-center">{exam.name}</h3>
-                <p className="text-xs text-[#666666] text-center">{exam.fullName}</p>
+          /* 2. Ghost wrapper: Keeps the grid layout fixed while the card grows */
+          <div key={exam.id} className="relative h-64 w-full">
+            
+            <div className="
+              examination-card absolute inset-0 z-10
+              bg-white rounded-2xl p-6 border border-gray-100
+              flex flex-col overflow-hidden group
+              hover:z-50 hover:scale-[1.15] hover:shadow-2xl hover:h-[450px]
+              origin-center border border-gray-200
+            ">
+              
+              {/* Image Section - Visible by default, moves up on hover */}
+              <div className="flex flex-col items-center justify-center transition-all duration-500 group-hover:mb-4">
+                <img 
+                  src={exam.logo} 
+                  alt={exam.name} 
+                  className="w-20 h-20 object-contain mb-2 transition-transform group-hover:scale-75" 
+                />
+                <h3 className="font-bold text-base text-center">{exam.name}</h3>
+                <p className="text-[10px] text-[#666666] text-center group-hover:hidden">
+                  {exam.fullName}
+                </p>
               </div>
 
-              {/* Back of Card - Only show if details exist */}
-              {exam.details && (
-                <div className="flip-card-back bg-white rounded-xl p-6 shadow-md border border-gray-100 overflow-y-auto">
-                  <h3 className="font-medium text-lg mb-4 text-center">{exam.name}</h3>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-sm mb-2 text-gray-800">Key Features</h4>
-                      <div className="space-y-3">
-                        <div>
-                          <p className="font-medium text-xs text-gray-700 mb-1">Exam Pattern</p>
-                          <ul className="list-disc list-inside space-y-1 text-xs text-gray-600">
-                            {exam.details.examPattern.map((item, idx) => (
-                              <li key={idx}>{item}</li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div>
-                          <p className="font-medium text-xs text-gray-700 mb-1">Syllabus</p>
-                          <ul className="list-disc list-inside space-y-1 text-xs text-gray-600">
-                            {exam.details.syllabus.map((item, idx) => (
-                              <li key={idx}>{item}</li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div>
-                          <p className="font-medium text-xs text-gray-700 mb-1">Exam Date</p>
-                          <p className="text-xs text-gray-600">{exam.details.examDate}</p>
-                        </div>
-                      </div>
-                    </div>
+              {/* 3. Details Section - Height 0 by default, expands on hover */}
+              <div className="
+                opacity-0 max-h-0 overflow-y-auto transition-all duration-500 delay-100
+                group-hover:opacity-100 group-hover:max-h-[300px] scrollbar-hide
+              ">
+                <div className="h-[1px] bg-gray-100 my-3" />
+                
+                <div className="space-y-4 text-left">
+                  <div>
+                    <p className="font-bold text-[10px] text-[#F3572A] uppercase">Exam Pattern</p>
+                    <ul className="space-y-4 mt-1">
+                      {exam.details.examPattern.map((item, idx) => (
+                        <li key={idx} className="text-[16px] text-[#444444] flex items-start">
+                          <span className="text-[#F3572A] mr-3 font-bold">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <p className="font-bold text-[10px] text-[#F3572A] uppercase">Syllabus</p>
+                    <ul className="space-y-4 mt-1">
+                      {exam.details.syllabus.map((item, idx) => (
+                        <li key={idx} className="text-[16px] text-[#444444] flex items-start">
+                          <span className="text-[#F3572A] mr-3 font-bold">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="">
+                    <p className="font-bold text-[10px] text-[#F3572A] uppercase">Exam Date</p>
+                    <span className="text-[16px] text-gray-600">{exam.details.examDate}</span>
                   </div>
                 </div>
-              )}
+              </div>
             </div>
           </div>
         ))}

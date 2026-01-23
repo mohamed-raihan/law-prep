@@ -9,7 +9,7 @@ import Experts from '../components/home/Experts'
 export default function AboutUs() {
   return (
     <div className="min-h-screen bg-[#F4F2F0]">
-      <div className="px-10">
+      <div className="md:px-10 px-2">
         <Header />
         <Banner />
         <Statistics />

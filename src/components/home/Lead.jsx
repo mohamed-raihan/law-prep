@@ -6,7 +6,7 @@ const cards = [
         title: 'Top-Tier NLU Legal Mentors',
         paragraph:
             'Our faculty consists of alumni from top NLUs like NLSIU, NALSAR, and WBNUJS who have cracked these exams themselves, providing professional insights into evolving exam patterns and legal reasoning.',
-        image: '/1.png',
+        image: '/1.jpg',
         expandedContent: [
             'The NLU Edge: Our faculty consists of alumni from top NLUs like NLSIU, NALSAR, and WBNUJS who have cracked these exams themselves',
             'Expert Pedagogy: Beyond just lectures, our legal experts provide professional insights into evolving exam patterns and legal reasoning',
@@ -19,7 +19,7 @@ const cards = [
         title: '100+ All India Mock Tests',
         paragraph:
             'Mocks designed to mirror the exact difficulty, interface, and time pressure of CLAT, AILET, and other major exams, allowing you to compete with thousands of aspirants across India to understand your real-time standing and percentile.',
-        image: '/2.png',
+        image: '/2.jpeg',
         expandedContent: [
             'Real Exam Simulation: Mocks designed to mirror the exact difficulty, interface, and time pressure of CLAT, AILET, and other major exams',
             'National Benchmarking: Compete with thousands of aspirants across India to understand your real-time standing and percentile',
@@ -45,7 +45,7 @@ const cards = [
         title: 'Performance Review & Analysis',
         paragraph:
             'Detailed analytics tracking your accuracy, speed, and time-spent per question. Visual charts highlight your strongest and weakest areas across the syllabus with automated recommendations on which topics to revisit.',
-        image: '/4.png',
+        image: '/4.jpg',
         expandedContent: [
             'AI-Backed Insights: Detailed analytics tracking your accuracy, speed, and time-spent per question',
             'Gap Identification: Visual charts highlighting your strongest and weakest areas across the syllabus',

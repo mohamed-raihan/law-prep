@@ -137,7 +137,7 @@ export default function LeadCard({
               </h4>
               <ul className="space-y-4">
                 {expandedContent.map((item, index) => (
-                  <li key={index} className="text-sm text-[#444444] flex items-start animate-fadeIn">
+                  <li key={index} className="text-[16px] text-[#444444] flex items-start animate-fadeIn">
                     <span className="text-[#F3572A] mr-3 font-bold">•</span>
                     <span>{item}</span>
                   </li>

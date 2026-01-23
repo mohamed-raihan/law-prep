@@ -1,13 +1,16 @@
 import { useState } from 'react'
+import { axiosInstance } from '../../services/axios'
+import { API_URL } from '../../services/api_url'
 
 export default function Form() {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    firstname: '',
+    lastname: '',
     email: '',
-    program: '',
+    program_of_interest: '',
     message: ''
   })
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -17,18 +20,26 @@ export default function Form() {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission logic here
-    console.log('Form submitted:', formData)
-    // Reset form
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      program: '',
-      message: ''
-    })
+    setIsLoading(true)
+    try {
+      const response = await axiosInstance.post(API_URL.CONTACT_US, formData)
+      console.log('Response:', response)
+      alert('Form submitted successfully')
+      setFormData({
+        firstname: '',
+        lastname: '',
+        email: '',
+        program_of_interest: '',
+        message: ''
+      })
+    } catch (error) {
+      alert('Error submitting form')
+      console.error('Error:', error)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -66,9 +77,9 @@ export default function Form() {
                 <div>
                   <input
                     type="text"
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
+                    id="firstname"
+                    name="firstname"
+                    value={formData.firstname}
                     onChange={handleChange}
                     placeholder="FIRST NAME"
                     className="w-full px-4 py-3 rounded-lg bg-white text-[14px] text-black placeholder:text-[#999999] placeholder:uppercase focus:outline-none focus:border-[#F3572A] transition-colors"
@@ -78,9 +89,9 @@ export default function Form() {
                 <div>
                   <input
                     type="text"
-                    id="lastName"
-                    name="lastName"
-                    value={formData.lastName}
+                    id="lastname"
+                    name="lastname"
+                    value={formData.lastname}
                     onChange={handleChange}
                     placeholder="LAST NAME"
                     className="w-full px-4 py-3 rounded-lg bg-white text-[14px] text-black placeholder:text-[#999999] placeholder:uppercase focus:outline-none focus:border-[#F3572A] transition-colors"
@@ -107,9 +118,9 @@ export default function Form() {
               <div>
                 <input
                   type="text"
-                  id="program"
-                  name="program"
-                  value={formData.program}
+                  id="program_of_interest"
+                  name="program_of_interest"
+                  value={formData.program_of_interest}
                   onChange={handleChange}
                   placeholder="PROGRAM OF INTEREST"
                   className="w-full px-4 py-3 rounded-lg bg-white text-[14px] text-black placeholder:text-[#999999] placeholder:uppercase focus:outline-none focus:border-[#F3572A] transition-colors"
@@ -133,9 +144,20 @@ export default function Form() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-[#F3572A] text-white rounded-lg text-[14px] font-bold uppercase tracking-wide hover:bg-orange-600 transition-colors mt-2 "
+                disabled={isLoading}
+                className="w-full px-6 py-3 bg-[#F3572A] text-white rounded-lg text-[14px] font-bold uppercase tracking-wide hover:bg-orange-600 transition-colors mt-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
-                Submit Application
+                {isLoading ? (
+                  <>
+                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span>Submitting...</span>
+                  </>
+                ) : (
+                  'Submit Application'
+                )}
               </button>
             </form>
           </div>
