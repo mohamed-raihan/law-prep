@@ -74,7 +74,7 @@ const examinations = [
   },
   {
     id: 4,
-    name: 'CU LLB Entrance',
+    name: 'Christ University LLB Entrance',
     fullName: 'Christ University LLB Entrance Exam, Bangalore',
     logoBg: 'bg-gray-50',
     logoText: 'CU',
@@ -122,7 +122,7 @@ const examinations = [
   {
     id: 6,
     name: 'CUET-UG',
-    fullName: 'Central University Entrance Test (UG)',
+    fullName: 'Common University Entrance Test (UG)',
     logoBg: 'bg-green-50',
     logoText: 'CUET',
     logo:"/cuetug.png",
