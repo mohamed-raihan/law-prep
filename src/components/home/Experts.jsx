@@ -141,7 +141,7 @@ export default function Experts() {
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
         >
-          <div className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8 lg:gap-12">
+          <div className="flex flex-col xl:flex-row gap-4 sm:gap-6 md:gap-8 lg:gap-12">
             {/* Mentor Image */}
             <div className="flex-shrink-0 mx-auto md:mx-0">
               <div className="w-48 h-60 sm:w-56 sm:h-72 md:w-64 md:h-80 lg:w-80 lg:h-96 rounded-2xl overflow-hidden">

@@ -45,9 +45,9 @@ export default function WhyChoose() {
   ]
 
   return (
-    <section className="w-full my-4 grid grid-cols-1 md:grid-cols-2 gap-4 bg-white rounded-[25px] p-10">
+    <section className="w-full my-4 grid grid-cols-1 xl:grid-cols-2 gap-4 bg-white rounded-[25px] p-10">
       {/* Title Section */}
-      <div className="flex flex-col justify-between gap-4">
+      <div className="flex flex-col xl:justify-between gap-4">
         <div className="mb-8">
           <div className="inline-block bg-[#F4F2F0] rounded-full px-4 py-2 mb-3">
             <span className="text-sm font-medium text-black">Why</span>

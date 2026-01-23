@@ -15,7 +15,7 @@ export default function Header() {
     <div className="w-full pt-4 sm:pt-6 md:pt-8 pb-2 sm:pb-3 md:pb-4">
       <div className="w-full bg-white rounded-[25px] px-4 sm:px-6 md:px-8 flex flex-row justify-between items-center gap-3 sm:gap-4 shadow-sm relative">
         <div className="flex-shrink-0">
-            <img src="/prep-logo.svg" alt="logo" className="w-16 h-16 sm:w-20 sm:h-20" />
+            <img src="/prep-logo.svg" alt="logo" className="w-16 h-16 sm:w-24 sm:h-24" />
         </div>
         
         {/* Desktop Navigation */}

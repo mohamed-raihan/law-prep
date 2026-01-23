@@ -6,7 +6,23 @@ const examinations = [
     fullName: 'Common Law Admission Test',
     logoBg: 'bg-blue-50',
     logo:"/clat.png",
-    logoText: 'CLAT'
+    logoText: 'CLAT',
+    details: {
+      examPattern: [
+        'Conducted by the Consortium of NLUs',
+        '120 MCQs | Duration: 120 minutes',
+        'Sections: English, GK & Current Affairs, Legal Reasoning, Logical Reasoning, Quantitative Techniques',
+        '+1 for correct answers, -0.25 for incorrect answers'
+      ],
+      syllabus: [
+        'English: Reading comprehension & language skills',
+        'GK & CA: National & international current affairs',
+        'Legal Reasoning: Passage-based legal questions',
+        'Logical Reasoning: Critical & analytical reasoning',
+        'Quantitative Techniques: Basic maths & interpretation'
+      ],
+      examDate: 'Conducted once a year, usually in December'
+    }
   },
   {
     id: 2,
@@ -109,7 +125,22 @@ const examinations = [
     fullName: 'Central University Entrance Test (UG)',
     logoBg: 'bg-green-50',
     logoText: 'CUET',
-    logo:"/cuetug.png"
+    logo:"/cuetug.png",
+    details: {
+      examPattern: [
+        'Conducted by the National Testing Agency (NTA)',
+        'Computer-based test (CBT)',
+        'Sections: Language, Domain Subjects, General Test (as per university/course)',
+        'MCQ format | Duration varies by sections chosen',
+        '+5 for correct answers, -1 for incorrect answers, and 0 for unattempted questions'
+      ],
+      syllabus: [
+        'Language: Reading comprehension, grammar, vocabulary',
+        'General Test: GK, current affairs, logical & quantitative reasoning',
+        'Domain Subjects: As per selected subjects for the law program'
+      ],
+      examDate: 'Conducted once a year, usually between May 11 to May 31, 2026'
+    }
   }
 ]
 
