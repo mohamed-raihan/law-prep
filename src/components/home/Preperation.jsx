@@ -61,12 +61,12 @@ export default function Preperation() {
             </h2>
           </div>
 
-          <span className="max-w-2xl text-[#666666] text-[14px] md:text-[16px] text-justify lg:mt-3">
+          {/* <span className="max-w-2xl text-[#666666] text-[14px] md:text-[16px] text-justify lg:mt-3">
             Our law-prep blends exam-specific curriculum, consistent answer-writing practice, and
             expert-led analysis. We empower students to navigate the complexities of diverse legal
             entrances with a structured path designed for consistent growth and rank-boosting
             results.
-          </span>
+          </span> */}
         </div>
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">

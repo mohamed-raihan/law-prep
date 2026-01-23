@@ -85,11 +85,11 @@ export default function Experts() {
               Meet <br className="hidden sm:block" /> Our Experts
             </h2>
           </div>
-          <div className="flex-1 max-w-2xl mt-3">
+          {/* <div className="flex-1 max-w-2xl mt-3">
             <span className="text-base sm:text-lg md:text-[16px] text-[#666666] font-regular">
               Guided by the best in the field: Our mentors are NLU graduates and senior law professionals who bring firsthand experience and tested strategies to your prep and the deep understanding needed to excel in CLAT, AILET, LSAT, and beyond.
             </span>
-          </div>
+          </div> */}
         </div>
 
         {/* Mentor Grid */}

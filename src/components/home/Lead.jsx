@@ -29,15 +29,15 @@ const cards = [
     },
     {
         id: 3,
-        title: 'Topic-Wise Practice & Sectional Tests',
+        title: 'Dedicated LMS Portal',
         paragraph:
-            'Practice thousands of questions mapped to specific topics—from Legal Maxims to Quantitative Techniques. Use sectional tests to bridge the gap between concept learning and full-length mock stamina.',
-        image: '/3.png',
+            'Our centralized learning platform is designed to give you seamless access to all your classes, resources, and progress in one place. The dedicated LMS ensures a smooth, organized, and distraction-free learning experience, helping you stay consistent, track your performance, and make the most of every session.',
+        image: '/3.jpeg',
         expandedContent: [
-            'Granular Focus: Practice thousands of questions mapped to specific topics—from Legal Maxims to Quantitative Techniques',
-            'Skill-Building: Use sectional tests to bridge the gap between concept learning and full-length mock stamina',
-            'Adaptive Difficulty: Practice sets that evolve in difficulty as you improve, ensuring consistent growth',
-            'Immediate Feedback: Instant results and correct explanations provided the moment you submit a practice set'
+            'Live Class Integration: Attend all your live classes directly through the LMS with easy access to schedules, links, and reminders—ensuring you never miss a session and stay connected with your mentors in real time.',
+            'Complete Recorded Sessions: Get access to fully recorded sessions for every class, available till the end of your batch, so you can revisit concepts, revise at your own pace, and catch up anytime you miss a live class.',
+            'User-Friendly Interface: A clean, intuitive, and easy-to-navigate interface that makes learning simple—even for first-time users—so you can focus entirely on studying without technical hassles.',
+            'Course Structuring & Content Delivery: All courses are systematically organized into modules, topics, and sessions, with structured content delivery that helps you follow a clear learning path and build concepts step by step.'
         ]
     },
     {
@@ -58,7 +58,7 @@ const cards = [
         title: 'Topic-Focused Learning & Practice',
         paragraph:
             'Digital study materials and legal reasoning workbooks designed around the latest NLU entrance patterns. Step-by-step learning modules break down complex topics into digestible, easy-to-understand segments.',
-        image: '/5.png',
+        image: '/3.png',
         expandedContent: [
             'Curated Workbooks: Digital study materials and legal reasoning workbooks designed around the latest NLU entrance patterns',
             'Concept Clarity: Step-by-step learning modules that break down "scary" topics into digestible, easy-to-understand segments',
