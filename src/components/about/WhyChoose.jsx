@@ -49,9 +49,9 @@ export default function WhyChoose() {
       {/* Title Section */}
       <div className="flex flex-col xl:justify-between gap-4">
         <div className="mb-8">
-          <div className="inline-block bg-[#F4F2F0] rounded-full px-4 py-2 mb-3">
+          {/* <div className="inline-block bg-[#F4F2F0] rounded-full px-4 py-2 mb-3">
             <span className="text-sm font-medium text-black">Why</span>
-          </div>
+          </div> */}
           <h2 className="text-[42px] sm:text-[56px] lg:text-[64px] font-bold text-black leading-tight">
             Why Choose Us
           </h2>
@@ -66,9 +66,9 @@ export default function WhyChoose() {
           <blockquote className="text-[18px] sm:text-[20px] font-bold italic text-black leading-relaxed mb-3">
             "Consistency and clarity matter more than intensity. When students understand what to study and why, progress follows naturally."
           </blockquote>
-          <p className="text-[14px] sm:text-[15px] text-[#666666]">
+          {/* <p className="text-[14px] sm:text-[15px] text-[#666666]">
             Mentor, Prep Academy
-          </p>
+          </p> */}
         </div>
       </div>
 

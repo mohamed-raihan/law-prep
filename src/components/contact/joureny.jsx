@@ -58,9 +58,9 @@ export default function Journey() {
             </h2>
           </div>
           <div className="flex-1 lg:max-w-lg">
-            <span className="text-sm text-[14px] md:text-[16px] text-[#666666]">
+            {/* <span className="text-sm text-[14px] md:text-[16px] text-[#666666]">
               Begin your preparation with a structured learning system designed to guide you at every step. With expert support, focused practice, and flexible learning options, you can move forward with confidence and clarity.
-            </span>
+            </span> */}
           </div>
         </div>
       </div>
