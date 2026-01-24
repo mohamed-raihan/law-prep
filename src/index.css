@@ -95,7 +95,16 @@ nav button {
   transform: rotateY(180deg);
 }
 
-.card-grid-container:hover .examination-card:not(:hover) {
+/* Only apply hover-based blur on devices that truly support hover (desktop/laptop). */
+@media (hover: hover) and (pointer: fine) {
+  .card-grid-container:hover .examination-card:not(:hover) {
+    filter: blur(4px) grayscale(10%);
+    opacity: 0.6;
+  }
+}
+
+/* On touch devices (and also on click-to-expand), blur only when a card is expanded. */
+.card-grid-container.is-card-expanded .examination-card:not(.is-expanded) {
   filter: blur(4px) grayscale(10%);
   opacity: 0.6;
 }

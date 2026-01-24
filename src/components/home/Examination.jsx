@@ -165,7 +165,11 @@ export default function Examination() {
       </div>
 
       {/* Examinations Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 card-grid-container">
+      <div
+        className={`grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 card-grid-container ${
+          expandedId ? 'is-card-expanded' : ''
+        }`}
+      >
         {examinations.map((exam) => {
           const isExpanded = expandedId === exam.id
           return (
@@ -190,7 +194,7 @@ export default function Examination() {
                 flex flex-col overflow-hidden group
                 hover:z-50 hover:scale-[1.15] hover:shadow-2xl hover:h-[450px]
                 origin-center border border-gray-200
-                ${isExpanded ? 'z-50 scale-[1.15] shadow-2xl h-[450px]' : ''}
+                ${isExpanded ? 'is-expanded z-50 scale-[1.15] shadow-2xl h-[450px]' : ''}
               `}
             >
               
