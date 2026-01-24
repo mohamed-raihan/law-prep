@@ -33,9 +33,9 @@ export default function Footer() {
                             </div>
 
                             <div className="flex flex-col gap-4">
-                                <a href="https://facebook.com" className="text-black no-underline text-sm font-medium uppercase tracking-wide transition-colors duration-200 hover:text-[#FF0000]">FACEBOOK</a>
-                                <a href="https://instagram.com" className="text-black no-underline text-sm font-medium uppercase tracking-wide transition-colors duration-200 hover:text-[#FF0000]">INSTAGRAM</a>
-                                <a href="https://youtube.com" className="text-black no-underline text-sm font-medium uppercase tracking-wide transition-colors duration-200 hover:text-[#FF0000]">YOUTUBE</a>
+                                <a target="_blank" href="https://www.facebook.com/prepacademy.in" className="text-black no-underline text-sm font-medium uppercase tracking-wide transition-colors duration-200 hover:text-[#FF0000]">FACEBOOK</a>
+                                <a target="_blank" href="https://www.instagram.com/prepacademy.in?igsh=MWg5b2xpMzdsdXU4dw==" className="text-black no-underline text-sm font-medium uppercase tracking-wide transition-colors duration-200 hover:text-[#FF0000]">INSTAGRAM</a>
+                                <a target="_blank" href="https://youtube.com/@prepacademy?si=AkE3P1yj3EmWRL2y" className="text-black no-underline text-sm font-medium uppercase tracking-wide transition-colors duration-200 hover:text-[#FF0000]">YOUTUBE</a>
                             </div>
                         </nav>
                     </div>
