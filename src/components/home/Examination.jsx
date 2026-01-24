@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 const examinations = [
   {
@@ -146,6 +147,11 @@ const examinations = [
 
 export default function Examination() {
   const navigate = useNavigate()
+  const [expandedId, setExpandedId] = useState(null)
+
+  const toggleExpanded = (id) => {
+    setExpandedId((prev) => (prev === id ? null : id))
+  }
   return (
     <div className="relative bg-white rounded-[25px] p-10">
       {/* Header Section */}
@@ -160,36 +166,63 @@ export default function Examination() {
 
       {/* Examinations Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 card-grid-container">
-        {examinations.map((exam) => (
+        {examinations.map((exam) => {
+          const isExpanded = expandedId === exam.id
+          return (
           /* 2. Ghost wrapper: Keeps the grid layout fixed while the card grows */
           <div key={exam.id} className="relative h-64 w-full">
             
-            <div className="
-              examination-card absolute inset-0 z-10
-              bg-white rounded-2xl p-6 border border-gray-100
-              flex flex-col overflow-hidden group
-              hover:z-50 hover:scale-[1.15] hover:shadow-2xl hover:h-[450px]
-              origin-center border border-gray-200
-            ">
+            <div
+              role="button"
+              tabIndex={0}
+              aria-expanded={isExpanded}
+              onClick={() => toggleExpanded(exam.id)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  toggleExpanded(exam.id)
+                }
+                if (e.key === 'Escape') setExpandedId(null)
+              }}
+              className={`
+                examination-card absolute inset-0 z-10 cursor-pointer select-none
+                bg-white rounded-2xl p-6 border border-gray-100
+                flex flex-col overflow-hidden group
+                hover:z-50 hover:scale-[1.15] hover:shadow-2xl hover:h-[450px]
+                origin-center border border-gray-200
+                ${isExpanded ? 'z-50 scale-[1.15] shadow-2xl h-[450px]' : ''}
+              `}
+            >
               
               {/* Image Section - Visible by default, moves up on hover */}
-              <div className="flex flex-col items-center justify-center transition-all duration-500 group-hover:mb-4">
+              <div
+                className={`
+                  flex flex-col items-center justify-center transition-all duration-500 group-hover:mb-4
+                  ${isExpanded ? 'mb-4' : ''}
+                `}
+              >
                 <img 
                   src={exam.logo} 
                   alt={exam.name} 
-                  className="w-20 h-20 object-contain mb-2 transition-transform group-hover:scale-75" 
+                  className={`
+                    w-20 h-20 object-contain mb-2 transition-transform group-hover:scale-75
+                    ${isExpanded ? 'scale-75' : ''}
+                  `}
                 />
                 <h3 className="font-bold text-base text-center">{exam.name}</h3>
-                <p className="text-[10px] text-[#666666] text-center group-hover:hidden">
+                <p className={`text-[10px] text-[#666666] text-center group-hover:hidden ${isExpanded ? 'hidden' : ''}`}>
                   {exam.fullName}
                 </p>
               </div>
 
               {/* 3. Details Section - Height 0 by default, expands on hover */}
-              <div className="
-                opacity-0 max-h-0 overflow-y-auto transition-all duration-500 delay-100
-                group-hover:opacity-100 group-hover:max-h-[300px] scrollbar-hide
-              ">
+              <div
+                className={`
+                  opacity-0 max-h-0 overflow-y-auto transition-all duration-500 delay-100
+                  group-hover:opacity-100 group-hover:max-h-[300px] scrollbar-hide
+                  ${isExpanded ? 'opacity-100 max-h-[300px]' : ''}
+                `}
+              >
                 <div className="h-[1px] bg-gray-100 my-3" />
                 
                 <div className="space-y-4 text-left">
@@ -225,7 +258,8 @@ export default function Examination() {
               </div>
             </div>
           </div>
-        ))}
+          )
+        })}
       </div>
 
       {/* Chat Widget */}
