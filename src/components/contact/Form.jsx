@@ -45,9 +45,9 @@ export default function Form() {
   return (
     <section className="w-full my-4">
       <div className="bg-white rounded-[25px] p-6 sm:p-10 lg:p-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Left Section - Promotional Content */}
-          <div className="flex flex-col">
+          <div className="flex flex-col h-full">
             {/* Mascot */}
             <div className="mb-6 lg:mb-8 max-w-xs lg:max-w-sm">
                 <img src="/contactPrep.svg" alt="Mascot" />
@@ -70,8 +70,8 @@ export default function Form() {
           </div>
  
           {/* Right Section - Enrollment Form */}
-          <div className="bg-[#F4F2F0] rounded-[20px] p-6 h-full">
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+          <div className="bg-[#F4F2F0] rounded-[20px] p-6 h-full flex flex-col">
+            <form onSubmit={handleSubmit} className="flex flex-col flex-1 gap-4 sm:gap-5">
               {/* First Name and Last Name Row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
@@ -129,15 +129,14 @@ export default function Form() {
               </div>
 
               {/* Additional Message */}
-              <div>
+              <div className="flex flex-col flex-1">
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="ADDITIONAL MESSAGE"
-                  rows="8"
-                  className="w-full px-4 py-3 rounded-lg bg-white text-[14px] text-black placeholder:text-[#999999] placeholder:uppercase focus:outline-none focus:border-[#F3572A] transition-colors resize-none"
+                  className="w-full flex-1 min-h-[160px] px-4 py-3 rounded-lg bg-white text-[14px] text-black placeholder:text-[#999999] placeholder:uppercase focus:outline-none focus:border-[#F3572A] transition-colors resize-none"
                 />
               </div>
 
@@ -145,7 +144,7 @@ export default function Form() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full px-6 py-3 bg-[#F3572A] text-white rounded-lg text-[14px] font-bold uppercase tracking-wide hover:bg-orange-600 transition-colors mt-2 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full px-6 py-3 bg-[#F3572A] text-white rounded-lg text-[14px] font-bold uppercase tracking-wide hover:bg-orange-600 transition-colors mt-auto disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {isLoading ? (
                   <>
