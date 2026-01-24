@@ -7,7 +7,7 @@ export default function Form() {
     firstname: '',
     lastname: '',
     email: '',
-    program_of_interest: '',
+    phone_number: '',
     message: ''
   })
   const [isLoading, setIsLoading] = useState(false)
@@ -31,7 +31,7 @@ export default function Form() {
         firstname: '',
         lastname: '',
         email: '',
-        program_of_interest: '',
+        phone_number: '',
         message: ''
       })
     } catch (error) {
@@ -68,7 +68,7 @@ export default function Form() {
               Enroll in a structured learning program designed to help you prepare effectively, track progress, and stay guided throughout your exam journey.
             </p>
           </div>
-
+ 
           {/* Right Section - Enrollment Form */}
           <div className="bg-[#F4F2F0] rounded-[20px] p-6 h-full">
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
@@ -118,11 +118,11 @@ export default function Form() {
               <div>
                 <input
                   type="text"
-                  id="program_of_interest"
-                  name="program_of_interest"
-                  value={formData.program_of_interest}
+                  id="phone_number"
+                  name="phone_number"
+                  value={formData.phone_number}
                   onChange={handleChange}
-                  placeholder="PROGRAM OF INTEREST"
+                  placeholder="PHONE NUMBER"
                   className="w-full px-4 py-3 rounded-lg bg-white text-[14px] text-black placeholder:text-[#999999] placeholder:uppercase focus:outline-none focus:border-[#F3572A] transition-colors"
                   required
                 />

@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom"
+
 export default function Banner() {
+  const navigate = useNavigate()
   return (
     <section className="w-full">
       <div className="w-full bg-white rounded-[25px] px-6 sm:px-10 lg:px-16 py-14 sm:py-16 shadow-sm mb-4">
@@ -17,12 +20,12 @@ export default function Banner() {
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="px-8 py-3 bg-[#F3572A] text-white rounded-full text-[13px] font-semibold tracking-wide hover:bg-orange-600 transition-colors">
+            <button onClick={() => navigate('/contact')} className="px-8 py-3 bg-[#F3572A] text-white rounded-full text-[13px] font-semibold tracking-wide hover:bg-orange-600 transition-colors cursor-pointer">
               CONTACT US
             </button>
-            <button className="px-8 py-3 bg-[#F4F2F0] text-black rounded-full text-[13px] font-semibold tracking-wide hover:bg-gray-200 transition-colors">
+            {/* <button className="px-8 py-3 bg-[#F4F2F0] text-black rounded-full text-[13px] font-semibold tracking-wide hover:bg-gray-200 transition-colors">
               REQUEST A CALL BACK
-            </button>
+            </button> */}
           </div>
 
           <div className="mt-12 flex justify-center w-full">

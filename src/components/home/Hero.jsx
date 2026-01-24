@@ -23,9 +23,9 @@ export default function Hero() {
 
             {/* Main Heading */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-left text-black leading-tight">
-            Full-Spectrum Coaching
+            Full-Spectrum<br />Coaching
             <br />
-              <span className="text-orange-500">for Law Entrance Exams.</span>
+              <span className="text-orange-500">for Law Entrance <br /> Exams.</span>
             </h1>
 
             {/* Body Text */}

@@ -4,10 +4,10 @@ const mentors = [
   {
     id: 1,
     name: 'Janaki Devi Bhaskar',
-    title: 'Symbiosis Law School',
-    detailedTitle: 'Symbiosis Law School',
+    title: 'Tamil Nadu National Law University ',
+    detailedTitle: 'Tamil Nadu National Law University ',
     image: '/janakiDevi.png',
-    bio: 'Janaki Devi Bhaskar is a legal researcher and policy professional whose work sits at the intersection of law, justice, and sustainable development. An NLU graduate with an LL.M. in Criminal and Securities Law, she brings a strong academic foundation combined with a sharp focus on real-world policy impact. Janaki’s approach is rooted in intersectionality understanding how law, society, and economics interact to shape fair and inclusive systems. Alongside this, she believes that education reform and economic self-sufficiency are essential pillars for building empowered, dignified, and resilient communities. As a mentor, Janaki with her experience and strategistic approach brings clarity, purpose, and perspective encouraging our students to see law not just as a profession, but as a powerful tool for structural change.'
+    bio: '• NLU graduate with an LL.M. in Criminal and Securities Law, blending strong academics with hands-on policy experience.\n\n• Deeply interested in how law, society, and economics come together to create fair, inclusive, and sustainable systems.\n\n• As a mentor, brings clarity and perspective, helping students see law not just as a career, but as a tool to create meaningful change.'
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const mentors = [
     title: ['National Law University, ', 'Tripura Agartala'],
     detailedTitle: 'National Law University, Tripura Agartala',
     image: '/ayushiSingh.png',
-    bio: 'Aayushi Singh Tomar is a legal academic and researcher currently pursuing her Ph.D. at National Law University, Tripura (Agartala). With a strong academic orientation, she brings a research-driven and concept-focused approach to legal education. As a mentor, Aayushi is committed to helping students build conceptual clarity, analytical thinking, and a strong foundational understanding of law. Her mentoring style emphasizes structured learning and strategic preparation, enabling learners to approach competitive exams and legal studies with confidence and academic rigour.She believes in guiding students not just to learn, but to think critically, reason effectively, and apply legal concepts with precision skills that are essential for long-term success in the legal field.'
+    bio: '• Legal academic and researcher, currently pursuing a Ph.D. at NLU Tripura, with a strong focus on concepts and research-driven learning.\n\n• Passionate about helping students build clear fundamentals, analytical thinking, and confidence in legal studies.\n\n• As a mentor, believes in structured guidance and critical thinking, enabling students to approach exams and law with clarity and precision.'
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ const mentors = [
     title: ['Dharmashastra National', 'Law University, Jabalpur'],
     detailedTitle: 'Dharmashastra National Law University, Jabalpur',
     image: '/Dr.Sunandini.png',
-    bio: 'Dr. Sunandini is a legal academic and researcher with a Ph.D. in Law from Dharmashastra National Law University and an LL.M. in Access to Justice from Tata Institute of Social Sciences. Her academic work explores the intersection of gender justice, public policy, internal security, and law, with a strong emphasis on justice delivery and governance systems. Through a field-informed research approach, Dr. Sunandini bridges legal theory with real-world policy challenges, particularly in areas impacting national security and marginalised communities. she brings a deeply informed and nuanced perspective on conflict, law, and society, enriching her teaching and mentorship with lived context and critical insight. As a mentor, she encourages our students to view law not only as an academic discipline, but as a practical and transformative tool for governance, equity, and systemic reform.'
+    bio: '• Legal academic and researcher with a Ph.D. in Law and an LL.M. in Access to Justice, bringing strong academic depth to her work.\n\n• Deeply engaged with issues of gender justice, public policy, governance, and national security, informed by real-world research experience.\n\n• As a mentor, encourages students to see law as a practical tool for justice and systemic change, grounded in real social contexts.'
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ const mentors = [
     title: ['National Law University', 'Delhi'],
     detailedTitle: 'National Law University, Delhi',
     image: '/priyankaNair.png', 
-    bio: 'Priyanka Nair is a legal professional and academic with a strong foundation across criminal justice, business laws, and legal practice. She holds a Bachelor of Laws (LL.B.) from Kerala Law Academy Law College, Thiruvananthapuram, and a Master of Laws (LL.M.) in Business Laws from National Law University, Delhi. She further pursued her Ph.D. in Criminal Justice / Law Enforcement Administration from Hidayatullah National Law University, reflecting her deep academic engagement with justice systems, enforcement mechanisms, and criminal law frameworks. Priyanka is enrolled as an Advocate with the Bar Council of Delhi, bringing practical legal insight into her academic and mentoring work. Known for her critical thinking and analytical skills, she guides our students to approach law with clarity, structure, and strategic reasoning bridging doctrinal understanding with real-world legal application. As a mentor, she focuses on building strong conceptual foundations while helping students develop the critical skills required for legal studies, research, and professional practice.'
+    bio: '• Legal professional and academic with experience across criminal justice, business laws, and legal practice, supported by strong academic training.\n\n• An Advocate enrolled with the Bar Council of Delhi, bringing practical courtroom and real-world legal insight into teaching and mentoring.\n\n• As a mentor, helps students build clear concepts, structured thinking, and strategic reasoning, connecting theory with real legal application.'
   },
   {
     id: 5,
@@ -39,7 +39,7 @@ const mentors = [
     title: ['National Law University', 'Odisha'],
     detailedTitle: 'National Law University, Odisha',
     image: '/mohammedShahzad.png',
-    bio: 'Mohammed Shahzad Shafi is a legal academic with a strong academic grounding in corporate, commercial, and doctrinal legal studies. His academic journey reflects a commitment to excellence in legal scholarship and student mentorship. He is currently pursuing his Ph.D. in Law at National Law University, Odisha, where his research reflects a deep engagement with contemporary legal frameworks and evolving regulatory landscapes. Known for his academic excellence and analytical depth, his doctoral research is rooted in rigorous scholarship, critical inquiry, and a commitment to advancing legal understanding. As a mentor, Mohammed Shahzad Shafi brings a structured, concept-driven approach to legal education. He focuses on helping students build strong fundamentals, analytical clarity, and academic depth, with a particular emphasis on legal research as a core professional skill.'
+    bio: '• Legal academic and researcher, currently pursuing a Ph.D. in Law at NLU Odisha, with a strong interest in corporate and commercial law.\n\n• Known for a concept-driven and analytical approach, grounded in rigorous research and academic clarity.\n\n• As a mentor, focuses on building strong fundamentals and research-oriented thinking, helping students develop depth and confidence in law.'
   }
 ]
 
@@ -154,7 +154,7 @@ export default function Experts() {
             </div>
 
             {/* Mentor Details */}
-            <div className="flex-1 flex flex-col">
+            <div className="flex-1 flex flex-col justify-between">
               <div>
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-medium mb-3 sm:mb-4">
                 {selectedMentor.name}
@@ -164,7 +164,7 @@ export default function Experts() {
               </p>
               </div>
               <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
-                <p>{selectedMentor.bio}</p>
+                <p className="whitespace-pre-line">{selectedMentor.bio}</p>
                 {/* <p>{selectedMentor.bio}</p> */}
               </div>
             </div>

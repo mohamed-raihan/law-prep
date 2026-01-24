@@ -30,13 +30,13 @@ export default function LawJoureny() {
               Apply for Admission 
             </button>
 
-            <button
+            {/* <button
               type="button"
               onClick={() => navigate('/contact')}
               className="px-8 py-3 bg-[#F4F2F0] text-black rounded-full text-[14px] font-medium hover:bg-gray-200 transition-colors uppercase"
             >
               REQUEST A CALL BACK
-            </button>
+            </button> */}
           </div>
 
           <div className="mt-10 flex justify-center">

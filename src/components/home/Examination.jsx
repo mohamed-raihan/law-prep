@@ -75,7 +75,7 @@ const examinations = [
   {
     id: 4,
     name: 'Christ University LLB Entrance',
-    fullName: 'Christ University LLB Entrance Exam, Bangalore',
+    fullName: 'Christ University LLB Entrance Exam',
     logoBg: 'bg-gray-50',
     logoText: 'CU',
     logo:"/cullb.jpeg",

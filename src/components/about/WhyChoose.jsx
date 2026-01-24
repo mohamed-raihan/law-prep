@@ -57,6 +57,10 @@ export default function WhyChoose() {
           </h2>
         </div>
 
+        <div className="flex justify-center">
+          <img src="/whyChoosePrep 1.svg" alt="Why Choose Us" className="w-auto h-[400px] object-cover" />
+        </div>
+
         {/* Quote Section */}
         <div className="max-w-2xl">
           <blockquote className="text-[18px] sm:text-[20px] font-bold italic text-black leading-relaxed mb-3">
